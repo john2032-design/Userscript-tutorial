@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* VortixWorld Design System — Neumorphism + Claymorphism + Glassmorphism */
+
+@layer base {
+  :root {
+    /* Fresh palette: emerald + teal + coral sunset + deep indigo */
+    --background: 180 25% 96%;
+    --foreground: 215 35% 12%;
+
+    --card: 180 30% 97%;
+    --card-foreground: 215 35% 12%;
+
+    --popover: 180 30% 97%;
+    --popover-foreground: 215 35% 12%;
+
+    --primary: 165 75% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 175 80% 55%;
+
+    --secondary: 12 90% 62%;
+    --secondary-foreground: 215 35% 12%;
+
+    --accent: 230 75% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 180 20% 92%;
+    --muted-foreground: 215 15% 42%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 20% 88%;
+    --input: 180 20% 88%;
+    --ring: 165 75% 42%;
+
+    --radius: 1.25rem;
+
+    /* Neumorphism shadows (light, slightly tealed) */
+    --shadow-neu: 8px 8px 20px rgba(120, 160, 165, 0.4), -8px -8px 20px rgba(255, 255, 255, 0.95);
+    --shadow-neu-sm: 4px 4px 10px rgba(120, 160, 165, 0.35), -4px -4px 10px rgba(255, 255, 255, 0.9);
+    --shadow-neu-inset: inset 6px 6px 12px rgba(120, 160, 165, 0.35), inset -6px -6px 12px rgba(255, 255, 255, 0.95);
+    --shadow-neu-pressed: inset 4px 4px 8px rgba(120, 160, 165, 0.3), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+
+    /* Claymorphism */
+    --shadow-clay:
+      inset 0 -8px 0 0 rgba(0, 0, 0, 0.08),
+      0 12px 24px -8px rgba(20, 180, 150, 0.4),
+      0 4px 8px -2px rgba(0, 0, 0, 0.1);
+    --shadow-clay-warm:
+      inset 0 -8px 0 0 rgba(0, 0, 0, 0.08),
+      0 12px 24px -8px rgba(255, 100, 70, 0.4),
+      0 4px 8px -2px rgba(0, 0, 0, 0.1);
+    --shadow-clay-cool:
+      inset 0 -8px 0 0 rgba(0, 0, 0, 0.08),
+      0 12px 24px -8px rgba(70, 100, 230, 0.4),
+      0 4px 8px -2px rgba(0, 0, 0, 0.1);
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.75);
+    --shadow-glass: 0 8px 32px rgba(20, 130, 130, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+
+    /* Gradients */
+    --gradient-mesh:
+      radial-gradient(at 20% 20%, hsl(165 80% 70% / 0.55) 0px, transparent 55%),
+      radial-gradient(at 80% 10%, hsl(12 90% 70% / 0.5) 0px, transparent 55%),
+      radial-gradient(at 70% 85%, hsl(230 80% 72% / 0.5) 0px, transparent 55%),
+      radial-gradient(at 10% 90%, hsl(45 95% 70% / 0.4) 0px, transparent 55%);
+    --gradient-primary: linear-gradient(135deg, hsl(165 75% 45%), hsl(175 80% 55%));
+    --gradient-warm: linear-gradient(135deg, hsl(12 90% 62%), hsl(35 95% 62%));
+    --gradient-cool: linear-gradient(135deg, hsl(230 75% 60%), hsl(265 70% 62%));
+    --gradient-fusion: linear-gradient(135deg, hsl(165 75% 45%), hsl(230 75% 60%) 50%, hsl(12 90% 62%));
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 220 25% 10%;
+    --foreground: 180 15% 92%;
+
+    --card: 220 25% 13%;
+    --card-foreground: 180 15% 92%;
+
+    --popover: 220 25% 13%;
+    --popover-foreground: 180 15% 92%;
+
+    --primary: 165 75% 50%;
+    --primary-foreground: 220 30% 8%;
+    --primary-glow: 175 80% 60%;
+
+    --secondary: 12 90% 65%;
+    --secondary-foreground: 220 30% 8%;
+
+    --accent: 230 80% 68%;
+    --accent-foreground: 220 30% 8%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 180 10% 65%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 22%;
+    --input: 220 20% 22%;
+    --ring: 165 75% 50%;
+
+    /* Neumorphism — dark variant: light highlight + deeper shadow */
+    --shadow-neu: 8px 8px 20px rgba(0, 0, 0, 0.55), -8px -8px 20px rgba(255, 255, 255, 0.04);
+    --shadow-neu-sm: 4px 4px 10px rgba(0, 0, 0, 0.5), -4px -4px 10px rgba(255, 255, 255, 0.035);
+    --shadow-neu-inset: inset 6px 6px 12px rgba(0, 0, 0, 0.5), inset -6px -6px 12px rgba(255, 255, 255, 0.04);
+    --shadow-neu-pressed: inset 4px 4px 8px rgba(0, 0, 0, 0.5), inset -4px -4px 8px rgba(255, 255, 255, 0.03);
+
+    /* Claymorphism — keep saturated, deepen shadow */
+    --shadow-clay:
+      inset 0 -8px 0 0 rgba(0, 0, 0, 0.18),
+      0 14px 28px -8px rgba(20, 180, 150, 0.45),
+      0 4px 8px -2px rgba(0, 0, 0, 0.4);
+    --shadow-clay-warm:
+      inset 0 -8px 0 0 rgba(0, 0, 0, 0.18),
+      0 14px 28px -8px rgba(255, 100, 70, 0.45),
+      0 4px 8px -2px rgba(0, 0, 0, 0.4);
+    --shadow-clay-cool:
+      inset 0 -8px 0 0 rgba(0, 0, 0, 0.18),
+      0 14px 28px -8px rgba(70, 100, 230, 0.5),
+      0 4px 8px -2px rgba(0, 0, 0, 0.4);
+
+    /* Glassmorphism — translucent dark */
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+    /* Gradients — deeper mesh */
+    --gradient-mesh:
+      radial-gradient(at 20% 20%, hsl(165 80% 35% / 0.55) 0px, transparent 55%),
+      radial-gradient(at 80% 10%, hsl(12 85% 45% / 0.5) 0px, transparent 55%),
+      radial-gradient(at 70% 85%, hsl(230 75% 45% / 0.55) 0px, transparent 55%),
+      radial-gradient(at 10% 90%, hsl(265 70% 40% / 0.45) 0px, transparent 55%);
+    --gradient-primary: linear-gradient(135deg, hsl(165 75% 45%), hsl(175 80% 55%));
+    --gradient-warm: linear-gradient(135deg, hsl(12 90% 60%), hsl(35 95% 60%));
+    --gradient-cool: linear-gradient(135deg, hsl(230 75% 60%), hsl(265 70% 60%));
+    --gradient-fusion: linear-gradient(135deg, hsl(165 75% 50%), hsl(230 75% 62%) 50%, hsl(12 90% 62%));
+  }
+
+  .dark .glass-strong {
+    background: rgba(20, 28, 38, 0.55);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: var(--gradient-mesh);
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+    overflow-wrap: break-word;
+  }
+
+  code {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+@layer components {
+  /* === NEUMORPHISM === */
+  .neu {
+    background: hsl(var(--background));
+    box-shadow: var(--shadow-neu);
+    border-radius: var(--radius);
+    transition: var(--transition-smooth);
+  }
+  .neu-sm {
+    background: hsl(var(--background));
+    box-shadow: var(--shadow-neu-sm);
+    border-radius: calc(var(--radius) - 0.5rem);
+    transition: var(--transition-smooth);
+  }
+  .neu-inset {
+    background: hsl(var(--background));
+    box-shadow: var(--shadow-neu-inset);
+    border-radius: var(--radius);
+  }
+  .neu-pressable:active {
+    box-shadow: var(--shadow-neu-pressed);
+  }
+
+  /* === CLAYMORPHISM === */
+  .clay {
+    background: linear-gradient(135deg, hsl(165 75% 48%), hsl(175 80% 58%));
+    color: white;
+    box-shadow: var(--shadow-clay);
+    border-radius: 1.75rem;
+    transition: var(--transition-bounce);
+  }
+  .clay-warm {
+    background: linear-gradient(135deg, hsl(12 90% 62%), hsl(35 95% 62%));
+    color: white;
+    box-shadow: var(--shadow-clay-warm);
+    border-radius: 1.75rem;
+    transition: var(--transition-bounce);
+  }
+  .clay-cool {
+    background: linear-gradient(135deg, hsl(230 75% 60%), hsl(265 70% 62%));
+    color: white;
+    box-shadow: var(--shadow-clay-cool);
+    border-radius: 1.75rem;
+    transition: var(--transition-bounce);
+  }
+  .clay:hover, .clay-warm:hover, .clay-cool:hover {
+    transform: translateY(-3px);
+  }
+  .clay:active, .clay-warm:active, .clay-cool:active {
+    transform: translateY(2px);
+    box-shadow: 
+      inset 0 -2px 0 0 rgba(0, 0, 0, 0.08),
+      0 4px 12px -4px rgba(140, 90, 200, 0.3);
+  }
+
+  /* === GLASSMORPHISM === */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass);
+    border-radius: var(--radius);
+  }
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(28px) saturate(200%);
+    -webkit-backdrop-filter: blur(28px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 12px 40px rgba(120, 80, 200, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+    border-radius: var(--radius);
+  }
+
+  .text-gradient {
+    background: var(--gradient-fusion);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
